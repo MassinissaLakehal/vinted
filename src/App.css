@@ -1,1 +1,8 @@
 /* Other rules */
+
+#banner {
+  margin: 0 auto;
+  height: 410px;
+  width: 100%;
+  object-fit: cover;
+}

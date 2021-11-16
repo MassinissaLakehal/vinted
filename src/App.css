@@ -3,6 +3,7 @@
 body {
   width: 100vw;
   margin: 0 auto;
+  font-family: "Calibri";
 }
 
 .header {
@@ -44,16 +45,11 @@ body {
 
 .offers {
   width: 80vw;
-  border: solid 3px black;
   margin: 0 auto;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-}
-
-.offer {
-  border: solid 1px blue;
 }
 
 .offer img {
@@ -72,15 +68,39 @@ body {
 }
 
 .offerPage img {
-  height: 70%;
+  height: 72%;
 }
 
 .detailsContainer {
   background-color: white;
   height: 70%;
   width: 20%;
+  padding-top: 20px;
 }
 
 .detail {
   display: flex;
+  justify-content: space-between;
+  padding: 0px 40px;
+}
+
+.signUpPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.signUpForm input {
+  height: 60px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }

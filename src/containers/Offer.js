@@ -38,9 +38,6 @@ const Offer = () => {
             </li>
           );
         })}
-
-        {/* <p>{data.owner.account.username}</p>
-        <p>{data.product_price} €</p> */}
       </div>
     </div>
   );

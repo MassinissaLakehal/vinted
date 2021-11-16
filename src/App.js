@@ -1,25 +1,19 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Header from "./components/Header";
 import Home from "./containers/Home";
 import Offer from "./containers/Offer";
+import Signup from "./containers/Signup";
 
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/offer">Offer</Link>
-          </li>
-        </ul>
-      </nav>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/offer" element={<Offer />} />
+        <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
     </Router>
   );

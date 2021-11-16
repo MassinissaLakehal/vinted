@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Offer from "./Offer";
+import { Link } from "react-router-dom";
 
 import bannerWide from "../images/bannerWide.jpg";
 
@@ -14,7 +14,7 @@ const Home = () => {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
-        console.log(response.data);
+        //console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -29,9 +29,20 @@ const Home = () => {
   ) : (
     <div>
       <img id="banner" src={bannerWide} alt="" />
-      {data.offers.map((offer, index) => {
-        return <Offer offer={offer} key={offer.id} />;
-      })}
+      <div className="offers">
+        {data.offers.map((offer, index) => {
+          return (
+            <Link key={offer._id} to={`/offer/${offer._id}`}>
+              <div className="offer">
+                <p>{offer.owner.account.username}</p>
+                <img src={offer.product_image.secure_url} alt="" />
+                <p>{offer.product_price} €</p>
+              </div>
+            </Link>
+          );
+          //<Offer offer={offer} key={offer._id} />;
+        })}
+      </div>
     </div>
   );
 };
